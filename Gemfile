@@ -5,9 +5,14 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'turbolinks',           '2.3.0'
+gem 'jbuilder',             '2.2.3'
+gem 'sdoc',                 '0.4.0', group: :doc
 
-
+group :development, :test do
+  gem 'sqllite', '~> 1.3.9'
+  gem 'byebug', '~> 3.4.0'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -36,4 +41,11 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+ gem 'debugger'
+ 
+ group :production do
+   gem 'pg',   '~> 0.17.1'
+   gem 'rails_12factor',   '~> 0.0.2'
+   gem 'web-console', '~> 2.0.0.beta3'
+   gem 'spring', '~> 1.1.3'
+ end
